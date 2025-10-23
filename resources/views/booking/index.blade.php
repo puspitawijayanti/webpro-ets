@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-@vite(['resources/css/style.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<script src="{{ asset('js/script.js') }}" defer></script>
 
 <div class="container py-5 booking-page">
     <div class="row justify-content-center text-center mb-4">

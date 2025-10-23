@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-@vite(['resources/css/style.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<script src="{{ asset('js/script.js') }}" defer></script>
 
 <div class="container my-5">
     <div class="card shadow-sm border-0 p-4" style="background-color: #faf8f6;">

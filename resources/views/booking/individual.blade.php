@@ -1,5 +1,6 @@
 @extends('layouts.app')
-@vite(['resources/css/style.css', 'resources/js/app.js'])
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+<script src="{{ asset('js/script.js') }}" defer></script>
 
 @section('content')
 <div class="container my-5">
