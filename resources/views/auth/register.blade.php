@@ -5,14 +5,14 @@
     <div class="card shadow p-4 border-0" style="max-width: 450px; width: 100%;">
         <h3 class="text-center text-brown mb-4 fw-bold">Create an ITStudy Account</h3>
 
-        {{-- Notifikasi sukses --}}
+        
         @if(session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
             </div>
         @endif
 
-        {{-- Notifikasi error umum --}}
+        
         @if(session('error'))
             <div class="alert alert-danger">
                 {{ session('error') }}
