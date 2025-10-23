@@ -6,10 +6,10 @@
 
     
     @if (session('success'))
-        <div class="alert alert-success text-center rounded-pill shadow-sm" style="max-width:600px; margin:auto;">
-            {{ session('success') }}
-        </div>
-    @endif
+    <div class="alert alert-success text-center rounded-pill shadow-sm" style="max-width:600px; margin:auto;">
+        {!! session('success') !!}
+    </div>
+@endif
 
     
     @if ($reservations->isEmpty())
