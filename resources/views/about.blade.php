@@ -96,7 +96,7 @@
   }
 
   .about-hero {
-    background-image: url("{{ asset('img/about-us/ITStudy-bg.jpg') }}");
+    background-image: url("{{ asset('img/about-us/Bg.png') }}");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
