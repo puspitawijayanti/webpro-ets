@@ -173,6 +173,10 @@ class BookingController extends Controller
         ]);
 
         return redirect()->route('reservation.index')
-            ->with('success', 'Payment proof uploaded. Waiting for confirmation.');
+    ->with('success', 'Payment proof uploaded. Waiting for confirmation. <br> 
+        <a href="https://wa.me/6285730679356" target="_blank" style="color:#155724; font-weight:bold; text-decoration:underline;">
+            Chat Admin via WhatsApp
+        </a>');
+
     }
 }
