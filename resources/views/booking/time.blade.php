@@ -33,7 +33,7 @@
 
             <div class="col-md-8 position-relative">
                 <div class="bg-white p-4 rounded shadow-sm border border-brown text-center">
-                    <h6 class="fw-semibold text-brown mb-4">🕒 Choose Time ({{ $data['date'] }})</h6>
+                    <h6 class="fw-semibold text-brown mb-4"> Choose Time ({{ $data['date'] }})</h6>
 
                     <div class="time-grid">
                         @for ($i = 0; $i < 24; $i++)
@@ -46,7 +46,7 @@
                             <button type="button"
                                 class="time-btn {{ $isBooked ? 'booked' : '' }}"
                                 {{ $isBooked ? 'disabled' : '' }}>
-                                {{ $hourStart }}–{{ $hourEnd }}
+                                {{ $hourStart }}-{{ $hourEnd }}
                             </button>
                         @endfor
                     </div>
