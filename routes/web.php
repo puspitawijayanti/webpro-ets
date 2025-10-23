@@ -36,3 +36,10 @@ Route::middleware('auth')->group(function () {
         return redirect()->route('login')->with('success', 'You have been logged out.');
     })->name('logout');
 });
+
+use Illuminate\Support\Facades\Artisan;
+
+Route::get('/fix-seed', function () {
+    Artisan::call('migrate:fresh --seed --force');
+    return 'Database migrated and seeded successfully!';
+});
