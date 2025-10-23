@@ -37,9 +37,41 @@ Route::middleware('auth')->group(function () {
     })->name('logout');
 });
 
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
-Route::get('/fix-seed', function () {
-    Artisan::call('migrate:fresh --seed --force');
-    return 'Database migrated and seeded successfully!';
+Route::get('/fix-rooms', function () {
+    DB::table('rooms')->insert([
+        [
+            'name_rooms' => 'Individual Desk',
+            'room_type_id' => 1,
+            'capacity' => 1,
+            'facilities' => 'Wi-Fi, Power Outlet, Air Conditioner',
+            'price_per_hour' => 12000,
+            'status' => 'available',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name_rooms' => 'Group Desk',
+            'room_type_id' => 2,
+            'capacity' => 4,
+            'facilities' => 'Wi-Fi, Whiteboard, Air Conditioner',
+            'price_per_hour' => 35000,
+            'status' => 'available',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+        [
+            'name_rooms' => 'VIP Room',
+            'room_type_id' => 3,
+            'capacity' => 8,
+            'facilities' => 'Wi-Fi, Projector, Meeting Table, AC',
+            'price_per_hour' => 50000,
+            'status' => 'available',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ],
+    ]);
+
+    return '✅ Rooms inserted successfully!';
 });
