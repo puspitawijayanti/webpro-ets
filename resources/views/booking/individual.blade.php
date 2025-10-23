@@ -1,11 +1,8 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script src="{{ asset('js/script.js') }}" defer></script>
 
 @section('content')
 <div class="container my-5">
     <div class="card shadow-sm border-0 p-4" style="background-color: #faf8f6;">
-
         <div class="mb-3">
             <a href="{{ route('booking') }}" class="text-decoration-none text-brown fw-semibold">
                 <i class="bi bi-arrow-left"></i> Prev
@@ -16,10 +13,10 @@
             <div class="col-md-4 text-center">
                 <img src="{{ asset('img/booking/individual-desk.jpg') }}" 
                      alt="Individual Desk"
-                     class="img-fluid rounded shadow-sm mb-3 booking-image">
-
+                     class="img-fluid rounded shadow-sm mb-3 booking-image"
+                     style="max-height:400px;object-fit:cover;">
                 <h6 class="fw-semibold text-brown">Individual Desk</h6>
-                <p class="fw-bold text-brown mb-0">Rp4000/hour</p>
+                <p class="fw-bold text-brown mb-0">Rp4.000/hour</p>
             </div>
 
             <div class="col-md-8">
@@ -90,18 +87,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function checkNextAvailability() {
-        if (deskInput.value && selectedDateInput.value) {
-            nextButton.disabled = false;
-            nextButton.classList.remove('disabled');
-        } else {
-            nextButton.disabled = true;
-            nextButton.classList.add('disabled');
-        }
+        nextButton.disabled = !(deskInput.value && selectedDateInput.value);
     }
 });
 </script>
 
 <style>
+.text-brown { color: #4b1f0e; }
+.border-brown { border-color: #4b1f0e !important; }
+
+.btn-brown {
+    background-color: #4b1f0e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+.btn-brown:hover {
+    background-color: #6b2f1b;
+}
+.btn-brown:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
 .seat-btn {
     border: 2px solid #5c2e00;
     color: #5c2e00;
@@ -109,6 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 25px;
     margin: 5px;
     padding: 6px 20px;
+    font-weight: 600;
     transition: all 0.2s ease-in-out;
 }
 .seat-btn:hover {
@@ -119,21 +129,6 @@ document.addEventListener('DOMContentLoaded', function () {
     background-color: #0d6efd; 
     border-color: #0d6efd;
     color: white;
-}
-.btn-brown {
-    background-color: #5c2e00;
-    color: white;
-    font-weight: 600;
-    border-radius: 25px;
-    transition: all 0.2s ease-in-out;
-}
-.btn-brown:hover {
-    background-color: #432818;
-}
-.btn-brown:disabled,
-.btn-brown.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
 }
 </style>
 @endsection

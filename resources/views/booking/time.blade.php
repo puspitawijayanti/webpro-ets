@@ -1,6 +1,4 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script src="{{ asset('js/script.js') }}" defer></script>
 
 @section('content')
 @if (empty($data))
@@ -100,18 +98,54 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <style>
-.time-grid { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; }
-.time-btn {
-    border: 2px solid #5c2e00; color:#5c2e00; background:#fff;
-    border-radius: 25px; padding: 6px 20px; margin:5px;
-    transition: .15s; user-select:none;
+.text-brown { color: #4b1f0e; }
+.border-brown { border-color: #4b1f0e !important; }
+
+.time-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 8px; 
 }
-.time-btn:hover:not(:disabled):not(.booked){ background:#5c2e00; color:#fff; }
-.time-btn.active{ background:#0d6efd; border-color:#0d6efd; color:#fff; }
-.time-btn.booked{ background:#ccc !important; border-color:#ccc !important; color:#666 !important; cursor:not-allowed !important; }
-.btn-brown{ background:#5c2e00; color:#fff; font-weight:600; border-radius:25px; }
-.btn-brown:disabled{ opacity:.6; cursor:not-allowed; }
-.text-brown{ color:#4b2c20; }
-.border-brown{ border-color:#4b2c20 !important; }
+.time-btn {
+    border: 2px solid #5c2e00; 
+    color: #5c2e00; 
+    background: #fff;
+    border-radius: 25px; 
+    padding: 6px 20px; 
+    margin: 5px;
+    transition: .15s; 
+    user-select: none;
+}
+.time-btn:hover:not(:disabled):not(.booked){ 
+    background:#5c2e00; 
+    color:#fff; 
+}
+.time-btn.active{ 
+    background:#0d6efd; 
+    border-color:#0d6efd; 
+    color:#fff; 
+}
+.time-btn.booked{ 
+    background:#ccc !important; 
+    border-color:#ccc !important; 
+    color:#666 !important; 
+    cursor:not-allowed !important; 
+}
+
+.btn-brown{ 
+    background:#4b1f0e; 
+    color:#fff; 
+    font-weight:600; 
+    border-radius:25px; 
+    transition: all 0.3s ease-in-out;
+}
+.btn-brown:hover{ 
+    background:#6b2f1b; 
+}
+.btn-brown:disabled{ 
+    opacity:.6; 
+    cursor:not-allowed; 
+}
 </style>
 @endsection

@@ -1,20 +1,15 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script src="{{ asset('js/script.js') }}" defer></script>
 
 <div class="container my-5">
     <div class="card shadow-sm border-0 p-4" style="background-color: #faf8f6;">
-        {{-- Tombol Prev --}}
         <div class="mb-3">
             <a href="{{ route('booking') }}" class="text-decoration-none text-brown fw-semibold">
                 <i class="bi bi-arrow-left"></i> Prev
             </a>
         </div>
 
-       
         <div class="row align-items-center">
-            {{-- Kolom kiri: gambar + harga --}}
             <div class="col-md-4 text-center">
                 <img src="{{ asset('img/booking/group-desk.jpg') }}" 
                      alt="Group Desk"
@@ -24,10 +19,8 @@
                 <p class="fw-bold text-brown mb-0">Rp35.000/hour with 10 desk</p>
             </div>
 
-            
             <div class="col-md-8">
                 <div class="bg-white p-4 rounded shadow-sm border border-brown">
-                    {{-- Header tanggal --}}
                     <div class="text-center mb-4">
                         <label for="bookingDate" class="form-label fw-semibold text-brown">
                             <i class="bi bi-calendar-week"></i> Choose Date
@@ -37,7 +30,6 @@
                                style="max-width: 250px; border-radius: 25px; cursor: pointer;">
                     </div>
 
-                    {{-- Grid kursi (B1-B4) --}}
                     <div class="text-center seat-grid">
                         @foreach (['B1', 'B2', 'B3', 'B4'] as $seat)
                             <button type="button" class="seat-btn">{{ $seat }}</button>
@@ -45,14 +37,12 @@
                     </div>
                 </div>
 
-                
                 <form action="{{ route('booking.time') }}" method="POST" class="text-end mt-3">
                     @csrf
                     <input type="hidden" name="room_type" value="Group Desk">
                     <input type="hidden" name="desk_number" id="desk_number">
                     <input type="hidden" name="date" id="selected_date">
                     <input type="hidden" name="price" value="35000">
-
                     <button id="nextButton" type="submit"
                             class="btn btn-brown rounded-pill px-5 py-2"
                             disabled>
@@ -63,7 +53,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -100,6 +89,17 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 <style>
+.text-brown { color: #4b1f0e; }
+.border-brown { border-color: #4b1f0e !important; }
+.btn-brown {
+    background-color: #4b1f0e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+.btn-brown:hover { background-color: #6b2f1b; color: #fff; }
+
 .seat-btn {
     border: 2px solid #5c2e00;
     color: #5c2e00;
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     color: white;
 }
 .seat-btn.active {
-    background-color: #0d6efd; 
+    background-color: #0d6efd;
     border-color: #0d6efd;
     color: white;
 }

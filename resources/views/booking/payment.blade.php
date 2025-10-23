@@ -1,6 +1,4 @@
 @extends('layouts.app')
-<link rel="stylesheet" href="{{ asset('css/style.css') }}">
-<script src="{{ asset('js/script.js') }}" defer></script>
 
 @section('content')
 <div class="container my-5">
@@ -11,13 +9,12 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-5 text-center">
             <h2 class="fw-bold text-brown mb-4">ITStudy</h2>
-            
-            
+
             <img src="{{ asset('img/payment/qr-code.png') }}" 
                  alt="Payment QR" 
-                 class="img-fluid mb-3" 
+                 class="img-fluid mb-3 rounded shadow-sm" 
                  style="max-width: 250px;">
-            
+
             <p class="text-muted small">Upload your payment proof and wait for confirmation.</p>
 
             <form action="{{ route('booking.payment.upload') }}" 
@@ -71,10 +68,25 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style>
-#donePaymentBtn:disabled {
+.text-brown { color: #4b1f0e; }
+.btn-brown {
+    background-color: #4b1f0e;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+}
+.btn-brown:hover {
+    background-color: #6b2f1b;
+    color: #fff;
+}
+.btn-brown:disabled {
     background: #bdbdbd !important;
     border-color: #bdbdbd !important;
     cursor: not-allowed !important;
+}
+.card {
+    background-color: #fff;
 }
 </style>
 @endsection
