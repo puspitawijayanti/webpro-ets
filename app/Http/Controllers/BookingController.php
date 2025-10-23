@@ -52,7 +52,7 @@ class BookingController extends Controller
             foreach (explode(',', $slots) as $slot) {
                 $slot = trim($slot);
                 if (!$slot) continue;
-                [$start] = explode('–', $slot);
+                [$start] = explode('-', $slot);
                 $bookedSlots[] = $start;
             }
         }
@@ -94,8 +94,8 @@ class BookingController extends Controller
             default           => 1,
         };
 
-        [$firstStart] = explode('–', $times[0]);
-        [, $lastEnd]  = explode('–', end($times));
+        [$firstStart] = explode('-', $times[0]);
+        [, $lastEnd]  = explode('-', end($times));
 
         if (Session::has('change_booking_id')) {
             $booking = Booking::where('id', Session::get('change_booking_id'))
