@@ -13,7 +13,7 @@
 
         <div class="row align-items-center">
             <div class="col-md-4 text-center">
-                <img src="{{ Vite::asset('resources/img/booking/individual-desk.jpg') }}" 
+                <img src="{{ asset('img/booking/individual-desk.jpg') }}" 
                      alt="Individual Desk"
                      class="img-fluid rounded shadow-sm mb-3 booking-image">
 
@@ -32,7 +32,6 @@
                             style="max-width: 250px; border-radius: 25px; cursor: pointer;">
                     </div>
 
-                    
                     <div class="seat-grid text-center">
                         @for ($i = 1; $i <= 28; $i++)
                             <button type="button" class="seat-btn">A{{ $i }}</button>
@@ -43,7 +42,6 @@
                     </div>
                 </div>
 
-                
                 <form action="{{ route('booking.time') }}" method="POST" class="text-end mt-3">
                     @csrf
                     <input type="hidden" name="room_type" value="Individual Desk">
@@ -76,7 +74,6 @@ document.addEventListener('DOMContentLoaded', function () {
     dateInput.value = todayStr;
     selectedDateInput.value = todayStr;
 
-
     dateInput.addEventListener('change', function () {
         selectedDateInput.value = this.value;
         checkNextAvailability();
@@ -84,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     seatButtons.forEach(btn => {
         btn.addEventListener('click', function () {
-
             seatButtons.forEach(b => b.classList.remove('active'));
             this.classList.add('active');
             deskInput.value = this.textContent.trim();
@@ -114,18 +110,15 @@ document.addEventListener('DOMContentLoaded', function () {
     padding: 6px 20px;
     transition: all 0.2s ease-in-out;
 }
-
 .seat-btn:hover {
     background-color: #5c2e00; 
     color: white;
 }
-
 .seat-btn.active {
     background-color: #0d6efd; 
     border-color: #0d6efd;
     color: white;
 }
-
 .btn-brown {
     background-color: #5c2e00;
     color: white;
@@ -133,11 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
     border-radius: 25px;
     transition: all 0.2s ease-in-out;
 }
-
 .btn-brown:hover {
     background-color: #432818;
 }
-
 .btn-brown:disabled,
 .btn-brown.disabled {
     opacity: 0.6;

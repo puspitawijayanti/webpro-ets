@@ -4,7 +4,6 @@
 
 <div class="container my-5">
     <div class="card shadow-sm border-0 p-4" style="background-color: #faf8f6;">
-        {{-- Tombol Prev --}}
         <div class="mb-3">
             <a href="{{ route('booking') }}" class="text-decoration-none text-brown fw-semibold">
                 <i class="bi bi-arrow-left"></i> Prev
@@ -12,9 +11,8 @@
         </div>
 
         <div class="row align-items-center">
-            
             <div class="col-md-4 text-center">
-                <img src="{{ Vite::asset('resources/img/booking/vip-room.jpg') }}"
+                <img src="{{ asset('img/booking/vip-room.jpg') }}"
                      alt="VIP Room"
                      class="img-fluid rounded shadow-sm mb-3 booking-image">
 
@@ -22,7 +20,6 @@
                 <p class="fw-bold text-brown mb-0">Rp50.000/hour (VIP Room)</p>
             </div>
 
-            
             <div class="col-md-8">
                 <div class="bg-white p-4 rounded shadow-sm border border-brown">
                     <div class="text-center mb-4">
@@ -40,7 +37,6 @@
                     </div>
                 </div>
 
-                
                 <form action="{{ route('booking.time') }}" method="POST" class="text-end mt-3">
                     @csrf
                     <input type="hidden" name="room_type" value="VIP Room">

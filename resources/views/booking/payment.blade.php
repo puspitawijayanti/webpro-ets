@@ -10,15 +10,29 @@
     <div class="row justify-content-center align-items-center">
         <div class="col-md-5 text-center">
             <h2 class="fw-bold text-brown mb-4">ITStudy</h2>
-            <img src="{{ Vite::asset('resources/img/payment/qr-code.png') }}" alt="Payment QR" class="img-fluid mb-3" style="max-width: 250px;">
+            
+            
+            <img src="{{ asset('img/payment/qr-code.png') }}" 
+                 alt="Payment QR" 
+                 class="img-fluid mb-3" 
+                 style="max-width: 250px;">
+            
             <p class="text-muted small">Upload your payment proof and wait for confirmation.</p>
 
-            <form action="{{ route('booking.payment.upload') }}" method="POST" enctype="multipart/form-data" class="mt-3">
+            <form action="{{ route('booking.payment.upload') }}" 
+                  method="POST" 
+                  enctype="multipart/form-data" 
+                  class="mt-3">
                 @csrf
                 <input type="hidden" name="booking_id" value="{{ $booking_id }}">
-                <input type="file" id="paymentFile" name="payment_proof" class="form-control mb-3" accept="image/*,application/pdf" required>
+                <input type="file" id="paymentFile" name="payment_proof" 
+                       class="form-control mb-3" 
+                       accept="image/*,application/pdf" required>
 
-                <button type="submit" id="donePaymentBtn" class="btn btn-brown rounded-pill px-5 py-2 fw-semibold" disabled>
+                <button type="submit" 
+                        id="donePaymentBtn" 
+                        class="btn btn-brown rounded-pill px-5 py-2 fw-semibold" 
+                        disabled>
                     Done Payment
                 </button>
             </form>
@@ -49,11 +63,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const fileInput = document.getElementById('paymentFile');
   const btn = document.getElementById('donePaymentBtn');
   btn.disabled = true;
-  fileInput.addEventListener('change', () => { btn.disabled = fileInput.files.length === 0; });
+  fileInput.addEventListener('change', () => { 
+    btn.disabled = fileInput.files.length === 0; 
+  });
 });
 </script>
 
 <style>
-#donePaymentBtn:disabled{ background:#bdbdbd !important; border-color:#bdbdbd !important; cursor:not-allowed !important; }
+#donePaymentBtn:disabled {
+    background: #bdbdbd !important;
+    border-color: #bdbdbd !important;
+    cursor: not-allowed !important;
+}
 </style>
 @endsection

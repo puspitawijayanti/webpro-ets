@@ -11,11 +11,11 @@
             </a>
         </div>
 
-        {{-- Kontainer utama --}}
+       
         <div class="row align-items-center">
             {{-- Kolom kiri: gambar + harga --}}
             <div class="col-md-4 text-center">
-                <img src="{{ Vite::asset('resources/img/booking/group-desk.jpg') }}" 
+                <img src="{{ asset('img/booking/group-desk.jpg') }}" 
                      alt="Group Desk"
                      class="img-fluid rounded shadow-sm mb-3 booking-image"
                      style="max-height: 400px; object-fit: cover;">
@@ -23,7 +23,7 @@
                 <p class="fw-bold text-brown mb-0">Rp35.000/hour with 10 desk</p>
             </div>
 
-            {{-- Kolom kanan: tanggal & kursi --}}
+            
             <div class="col-md-8">
                 <div class="bg-white p-4 rounded shadow-sm border border-brown">
                     {{-- Header tanggal --}}
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                {{-- Tombol Next di kanan bawah --}}
+                
                 <form action="{{ route('booking.time') }}" method="POST" class="text-end mt-3">
                     @csrf
                     <input type="hidden" name="room_type" value="Group Desk">
@@ -63,7 +63,7 @@
     </div>
 </div>
 
-{{-- Script interaktif --}}
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const dateInput = document.getElementById('bookingDate');
@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
-
 <style>
 .seat-btn {
     border: 2px solid #5c2e00;
@@ -124,5 +123,4 @@ document.addEventListener('DOMContentLoaded', function () {
     cursor: not-allowed;
 }
 </style>
-
 @endsection

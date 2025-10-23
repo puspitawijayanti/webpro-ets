@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@vite(['resources/css/style.css', 'resources/js/app.js'])
 
 @section('content')
 <div class="container my-5">
@@ -85,7 +84,16 @@
 </div>
 
 <style>
-.btn-brown{ background:#4b2c20; color:#fff; }
-.btn-brown:hover{ background:#3a2117; }
+.btn-brown {
+    background: #4b2c20;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.btn-brown:hover {
+    background: #3a2117;
+    color: #fff;
+}
 </style>
 @endsection
