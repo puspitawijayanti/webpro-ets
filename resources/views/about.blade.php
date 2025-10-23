@@ -9,7 +9,7 @@
   </div>
 </section>
 
-<section class="d-flex justify-content-center mt-5" style="background-color: #403830; font-family: 'Poppins', sans-serif; padding: 50px 0;">
+<section class="d-flex justify-content-center mt-5" style="background-color: #403830; padding: 50px 0;">
   <div style="background-color: #4a3f36; border-radius: 20px; padding: 50px; max-width: 1200px; text-align: center;">
     <h2 class="fw-bold mb-4" style="color: #fadbb7; font-size: 3.5rem;">About Us</h2>
     <p style="color: #f6f0ea; font-size: 1.15rem; line-height: 1.8;">
@@ -27,7 +27,7 @@
   </div>
 </section>
 
-<section class="container mt-5" style="font-family: 'Poppins', sans-serif;">
+<section class="container mt-5">
   <div style="background-color: #ebe3de; padding: 30px; border-radius: 15px;">
     <h2 class="fw-bold text-center mb-4" style="color: #4a2c2a; font-size: 2.8rem;">Our Facilities</h2>
     <div class="row justify-content-center">
@@ -84,113 +84,107 @@
 </section>
 
 <section class="text-center py-5 final-cta">
-  <h2 class="fw-bold display-5 mb-3">CONTACT ✦ US</h2>
-  <p class="mb-0 fs-5">Find your perfect study spot at ITStudy today</p>
+  <h2 class="fw-bold display-5 mb-3 text-brown">CONTACT ✦ US</h2>
+  <p class="mb-0 fs-5 text-brown">Find your perfect study spot at ITStudy today</p>
 </section>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
 
-* {
-  font-family: 'Poppins', sans-serif !important;
-}
-
-.about-hero {
-  background-image: url("{{ asset('img/about-us/ITStusy-bg.jpg') }}");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 430px;
-  margin-top: 100px;
-  margin-bottom: 160px;
-  position: relative;
-}
-
-.hero-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-title {
-  font-size: 7rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  animation: fadeInDown 1.2s ease-in-out;
-}
-
-.hero-subtitle {
-  font-size: 1.5rem;
-  font-weight: 400;
-  opacity: 0.9;
-  animation: fadeInUp 1.4s ease-in-out;
-}
-
-@keyframes fadeInDown {
-  from {opacity: 0; transform: translateY(-30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-@keyframes fadeInUp {
-  from {opacity: 0; transform: translateY(30px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-.contact-section {
-  padding: 80px 0;
-}
-
-.contact-pill {
-  display: flex;
-  width: 300px;
-  border-radius: 30px;
-  overflow: hidden;
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  background-color: #e8ddd1;
-  color: #4a2c2a;
-  font-weight: 600;
-}
-
-.contact-pill:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-.pill-left {
-  flex: 1;
-  text-align: center;
-  padding: 12px 15px;
-}
-
-.pill-right {
-  flex: 1;
-  text-align: center;
-  padding: 12px 15px;
-  background-color: #8c6b5a;
-  color: white;
-}
-
-.contact-icon {
-  font-size: 1.4rem;
-  margin-left: 20px;
-}
-
-@media (max-width: 768px) {
-  .d-flex.justify-content-center {
-    flex-direction: column;
-    gap: 15px;
-    align-items: center;
+  * {
+    font-family: 'Poppins', sans-serif !important;
   }
-  .contact-pill {
+
+  .about-hero {
+    background-image: url("{{ asset('img/about-us/ITStudy-bg.jpg') }}");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 430px;
+    margin-top: 100px;
+    margin-bottom: 160px;
+    position: relative;
+  }
+
+  .hero-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
     width: 100%;
-    max-width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
-}
+
+  .hero-title {
+    font-size: 6rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    opacity: 0.9;
+    animation: fadeInUp 1.4s ease-in-out;
+  }
+
+  @keyframes fadeInDown {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  @keyframes fadeInUp {
+    from {opacity: 0; transform: translateY(30px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+  .contact-pill {
+    display: flex;
+    width: 300px;
+    border-radius: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: #e8ddd1;
+    color: #4a2c2a;
+    font-weight: 600;
+  }
+
+  .contact-pill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  }
+
+  .pill-left {
+    flex: 1;
+    text-align: center;
+    padding: 12px 15px;
+  }
+
+  .pill-right {
+    flex: 1;
+    text-align: center;
+    padding: 12px 15px;
+    background-color: #8c6b5a;
+    color: white;
+  }
+
+  .contact-icon {
+    font-size: 1.4rem;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 3.5rem;
+    }
+    .contact-pill {
+      width: 100%;
+      max-width: 320px;
+    }
+  }
 </style>
 
 @endsection

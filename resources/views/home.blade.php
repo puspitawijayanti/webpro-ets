@@ -88,7 +88,7 @@
   </div>
 </section>
 
-<section class="container mt-5 p-5 rounded-4 cta-section">
+<section class="container my-5 p-5 rounded-4 cta-section">
   <div class="row align-items-center">
     <div class="col-md-6 text-md-start text-center mb-4 mb-md-0">
       <h2 class="fw-bold cta-title">Ready to get things done?</h2>
@@ -108,34 +108,36 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-  body {
-    font-family: 'Poppins', sans-serif;
+  * {
+    font-family: 'Poppins', sans-serif !important;
   }
 
   .hero-title {
-    color: #4a2c2a;
+    color: #4b1f0e;
     font-size: 3.5rem;
     line-height: 1.2;
+    text-shadow: 1px 1px 6px rgba(255,255,255,0.5);
   }
 
   .hero-subtitle {
-    color: #6c757d;
-    max-width: 500px;
+    color: #5f5048;
+    max-width: 480px;
     margin-left: auto;
     font-size: 1.2rem;
   }
 
   .section-title {
-    color: #4a2c2a;
+    color: #4b1f0e;
   }
 
   .feature-card {
-    background-color: #ffece3;
+    background-color: #fdf6f2;
     padding: 25px;
     border-radius: 20px;
     text-align: center;
     height: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e6d8cf;
   }
 
   .feature-card:hover {
@@ -160,23 +162,43 @@
   }
 
   .cta-section {
-    background-color: #ffece3;
+    background-color: #f6e9df;
+    border: 1px solid #e2d2c7;
   }
 
   .cta-title {
-    color: #4a2c2a;
+    color: #4b1f0e;
+    font-weight: 700;
   }
 
   .btn-book {
-    background-color: #4a2c2a;
+    background-color: #4b1f0e;
     color: white;
     padding: 10px 25px;
-    border-radius: 8px;
+    border-radius: 25px;
     transition: 0.3s;
+    font-weight: 600;
   }
 
   .btn-book:hover {
-    background-color: #693b38;
+    background-color: #3a2117;
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .hero-section {
+      height: 70vh;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero-title {
+      font-size: 2.5rem;
+      line-height: 1.3;
+    }
+    .hero-subtitle {
+      font-size: 1rem;
+      margin: 0 auto;
+    }
   }
 </style>
 
